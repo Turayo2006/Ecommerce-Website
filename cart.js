@@ -2,7 +2,7 @@ let label = document.getElementById("label");
 let shoppingCart = document.getElementById("shopping-cart");
 let totalAmount = document.getElementById("total-amount");
 let cartTable = document.getElementById("cart-table");
-
+let cartContainer = document.getElementById("cart-container");
 
 
 let basket = JSON.parse(localStorage.getItem("data")) || [];
@@ -14,83 +14,182 @@ let calculation = () => {
 
 calculation();
 
-let generateCartItems = ()=>{
-    if(basket.length !== 0){
+let products = [
+    {
+        id: "a",
+        img: "https://i.postimg.cc/kg9YYbTn/f1.jpg",
+        name: "Carton Astronault Tshirts",
+        price: 78,
+        desc: ""
+    },
+    {
+        id: "b",
+        img: "https://i.postimg.cc/2yhT2kvb/f2.jpg",
+        name: "Carton Leave Tshirts",
+        price: 120,
+        desc: ""
+    },
+    {
+        id: "c",
+        img: "https://i.postimg.cc/VL9DtNm2/f3.jpg",
+        name: "Rose Multicolor Tshirts",
+        price: 180,
+        desc: ""
+    },
+    {
+        id: "d",
+        img: "https://i.postimg.cc/vZ3hPS1z/f4.jpg",
+        name: "Pink Flower Tshirt",
+        price: 250,
+        desc: ""
+    },
+    {
+        id: "e",
+        img: "https://i.postimg.cc/q7FLrhx6/f5.jpg",
+        name: "Purple Flowering Tshirts",
+        price: 380,
+        desc: ""
+    },
+    {
+        id: "f",
+        img: "https://i.postimg.cc/L86BZByZ/f7.jpg",
+        name: "Short Knicker",
+        price: 460,
+        desc: ""
+    },
+
+    {
+        id: "g",
+        img: "https://i.postimg.cc/zDxJ2f0H/f6.jpg",
+        name: "2 in 1 Double Routed",
+        price: 460,
+        desc: ""
+    },
+
+    {
+        id: "h",
+        img: "https://i.postimg.cc/x8qcBrpP/n6.jpg",
+        name: "Ash Short",
+        price: 460,
+        desc: ""
+    },
+    {
+        id: "abc",
+        img: "https://i.postimg.cc/2Sq4mytJ/f8.jpg",
+        name: "Carton Astronault Tshirts",
+        price: 78,
+        desc: ""
+    },
+
+    {
+        id: "bca",
+        img: "https://i.postimg.cc/KYjcC3sk/n3.jpg",
+        name: "Carton Leave Tshirts",
+        price: 120,
+        desc: ""
+    },
+
+    {
+        id: "cba",
+        img: "https://i.postimg.cc/vHvQBtJx/n4.jpg",
+        name: "Rose Multicolor Tshirts",
+        price: 180,
+        desc: ""
+    },
+
+    {
+        id: "dca",
+        img: "https://i.postimg.cc/908J8S4q/n5.jpg",
+        name: "Pink Flower Tshirt",
+        price: 250,
+        desc: ""
+    },
+
+
+
+]
+
+
+let generateCartItems = () => {
+       
+    // Clear any previous content in the tbody
+    cartContainer.innerHTML = '';
+
+    if (basket.length !== 0) {
+        // Create a table to display cart items
+   return (cartContainer.innerHTML = basket.map((x) => {
+        let { id, item } = x;
+        let search = products.find((y) => y.id === id) || [];
+        let { img, name, price } = search
+        let subtotal = item * price;
         
-        let table = document.createElement("table");
-
-        //create table headers
-        table.innerHTML = `
-           <thead>
-          <tr>
-            <td>Remove</td>
-            <td>Image</td>
-            <td>Product</td>
-            <td>Price</td>
-            <td>Quantity</td>
-            <td>Subtotal</td>
-          </tr>
-        </thead>
-        <tbody>
-        ${basket.map((item) => {
-            // Retrieve product data based on item ID
-            let search = proItemsData.find((x) => x.id === item.id);
-            if (!search) return ""; // Handle missing product
-
-            let { img, name, price } = search;
-            let TotalAmount = item.item * price;
-
-            return `
-                <tr>
-                    <td>
-                        <a href="#" onclick="removeItem(${item.id})">
-                            <i class="far fa-times-circle"></i>
-                        </a>
-                    </td>
-                    <td><img src="${img}" alt=""></td>
-                    <td>${name}</td>
-                    <td>$ ${price}</td>
-                    <td>
-                        <div class="buttons">
-                            <i onclick="decrement(${item.id})" class="fa-solid fa-minus minus"></i>
-                            <div id="${item.id}" class="productQuantity">${item.item}</div>
-                            <i onclick="increment(${item.id})" class="fa-solid fa-plus plus"></i>
-                        </div>
-                    </td>
-                    <td>$ ${totalAmount.toFixed(2)}</td>
-                </tr>
-            `;
-        }).join("")}
-    </tbody>
-`;
-// Replace the content of the shopping cart with the generated table
-shoppingCart.innerHTML = "";
-shoppingCart.appendChild(table);
-
-        // Calculate and display the total cart amount
-        let totalAmount = basket.reduce((total, item) => {
-            let search = proItemsData.find((x) => x.id === item.id);
-            if (!search) return total;
-            return total + item.item * search.price;
-        }, 0);
-
-        totalAmountElement.textContent = `$ ${totalAmount.toFixed(2)}`;
-
-
-} else{
-
-        shoppingCart.innerHTML = '';
-        label.innerHTML = `
-        <h2>Cart is Empty</h2>
-        <a href="index.html">
-            <button class="HomeBtn">Back to home</button>
-        </a>
+        return `
+            <tr> 
+                <td><i onclick="removeItem(${id})" class="far fa-times-circle"></i></td>
+                <td><img width="100" src="${img}" alt="" /></td>
+                <td>${name}</td>
+                <td>$ ${price}</td>
+                <td>
+                    <div class="buttons">
+                        <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                        <div id=${id} class="productQuantity">${item}</div>
+                        <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+                    </div>
+                </td>
+                <td>$ ${subtotal}</td>
+            </tr>
         `;
-    }
-    
+    }).join(""));
+
+    // Set the HTML content of the shopping cart element
+} else {
+    // Handle the case where the cart is empty
+    shoppingCart.innerHTML = '';
+    label.innerHTML = `
+        <h2>Cart is Empty</h2>
+        <a href="shop.html">
+            <button class="HomeBtn">Keep Shopping</button>
+        </a>
+    `;
+}
+calculation();
 };
 
+generateCartItems();
 
+
+
+let TotalAmount = ()=>{
+    if (basket.length !== 0){
+        let amount = basket.map((x) =>{
+            let {item, id} = x;
+            let search = products.find((y) => y.id === id);  
+            return item * search.price;
+        })
+        .reduce((x,y) => x+y, 0);
+        // console.log(amount)
+        totalAmount.innerHTML = `
+        <tr>
+        <td>Card-Subtotal</td>
+        <td>$ ${amount}</td>
+      </tr>
+      <tr>
+        <td>Shipping</td>
+        <td>Free</td>
+      </tr>
+      
+      <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>$ ${amount}</strong></td>
+      </tr>
+      <button class="btn normal" style="margin-top: 20px" href="#checkout.html">Proceed to checkout</button>
+        `;
+    } else return;
+}
+
+TotalAmount();
+
+generateCartItems();
 
 
 let increment = (id) => {
@@ -140,7 +239,7 @@ let selectedItem = id;
 // console.log(selectedItem);
 basket = basket.filter((x) => x.id !== selectedItem.id);
 generateCartItems();
-TotalAmount();
+totalAmount();
 calculation();
 localStorage.setItem("data", JSON.stringify(basket));
 };
@@ -152,32 +251,4 @@ let clearCart = () =>{
     localStorage.setItem("data", JSON.stringify(basket));
 }
 
-let TotalAmount = ()=>{
-    if (basket.length !== 0){
-        let amount = basket.map((x) =>{
-            let {item, id} = x;
-            let search = basket.find((y) => y.id === id) || [];  
-            return item * search.price;
-        })
-        .reduce((x,y) => x+y, 0);
-        // console.log(amount)
-        totalAmount.innerHTML = `
-        <tr>
-        <td>Card-Subtotal</td>
-        <td>$ ${amount}</td>
-      </tr>
-      <tr>
-        <td>Shipping</td>
-        <td>Free</td>
-      </tr>
-      
-      <tr>
-        <td><strong>Total</strong></td>
-        <td><strong>$ ${amount}</strong></td>
-      </tr>
-      <button class="btn normal" style="margin-top: 20px" href="#checkout.html">Proceed to checkout</button>
-        `;
-    } else return;
-}
 
-TotalAmount();
