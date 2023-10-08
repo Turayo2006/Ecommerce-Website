@@ -452,27 +452,6 @@ flex-wrap: wrap
   
 }
 
-.buttons{
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  font-size: 16px;
-  margin-top: 20px;
-}
- 
-.buttons i{
-  text-align: center;
-  font-size: 20px;
-}
-
-.buttons .plus{
-  color: green;
-}
-
-.buttons .minus{
-  color: red;
-}
-
 #banner{
   display: flex;
   flex-direction: column;
@@ -692,6 +671,7 @@ button.white{
   border-collapse: collapse;
   table-layout: fixed;
   white-space: nowrap;
+  
 }
 
 #cart table img{
@@ -743,14 +723,18 @@ button.white{
   font-weight: 700;
   text-transform: uppercase;
   font-size: 13px;
+  
 }
 
 #cart table tbody tr td{
   padding-top: 15px
+  
+
 }
 
 #cart table tbody td{
- font-size: 13px
+ font-size: 13px;
+ 
 }
 
 #cart-add{
@@ -830,6 +814,60 @@ border: 1px solid #e2e9e1;
   padding-bottom: 15px;
 }
 
+.buttons2{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  font-size: 16px;
+  margin-top: 20px
+}
+
+.HomeBtn{
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #088178;
+    box-shadow: 0 5px #088178;
+  }
+  .HomeBtn:hover {
+    box-shadow: 0 3px #088178;
+    top: 1px;
+  }
+  .HomeBtn:active {
+    box-shadow: 0 0 #088178;
+    top: 5px;
+  }
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  font-size: 16px;
+  text-align: center;
+  justify-content: center;
+}
+
+.buttons i{
+  text-align: center;
+  font-size: 20px;
+}
+
+.bi-dash-lg{
+  color: red
+}
+
+.bi-plus-lg{
+  color: green;
+}
 /* .....blog.... */
 #blog{
   padding: 150px 150px 0 150px
@@ -854,6 +892,15 @@ border: 1px solid #e2e9e1;
   height: 300px;
   object-fit: cover;
   
+}
+
+#blog .blog-box > .blog-img img{
+  width: 100%;
+  transition: all 1s ease;
+}
+
+#blog .blog-img:hover{
+  transform: scale(1.1); 
 }
 
 #blog .blog-details{
