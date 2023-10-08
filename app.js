@@ -24,7 +24,7 @@ let generateShop = () => {
                      <i class="fas fa-star"></i>
                   </div>
                   <h4>$ ${price}</h4>
-                  <div class="buttons">
+                  <div class="buttons2">
                  <i onclick="decrement(${id})"  class="fa-solid fa-minus minus"></i>
                  <div id=${id} class="productQuantity">${search.item === undefined? 0: search.item}</div>
                  <i onclick="increment(${id})"  class="fa-solid fa-plus plus"></i>
@@ -59,7 +59,7 @@ let newArrival = () => {
                      <i class="fas fa-star"></i>
                   </div>
                   <h4>$ ${price}</h4>
-                  <div class="buttons">
+                  <div class="buttons2">
                  <i onclick="decrement(${id})"  class="fa-solid fa-minus minus"></i>
                  <div id=${id} class="productQuantity">${search.item === undefined? 0: search.item}</div>
                  <i onclick="increment(${id})"  class="fa-solid fa-plus plus"></i>
