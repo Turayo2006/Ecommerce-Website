@@ -1,4 +1,6 @@
 let proContainer = document.getElementById("pro-container");
+let smallImg = document.getElementById("smallImg");
+let oldShop = document.getElementById("old-arrival");
 
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -8,7 +10,9 @@ let generateShop = () => {
         let search = basket.find((x) => x.id === id) || []; 
         return `
         <div class="pro">
+        <a href="sproduct.html?product=${id}">
         <img src="${img}" alt="">
+        </a>
                 <div class="des">
                   <span>adidas</span>
                   <h5>${name}</h5>
@@ -20,7 +24,7 @@ let generateShop = () => {
                      <i class="fas fa-star"></i>
                   </div>
                   <h4>$ ${price}</h4>
-                  <div class="buttons">
+                  <div class="buttons2">
                  <i onclick="decrement(${id})"  class="fa-solid fa-minus minus"></i>
                  <div id=${id} class="productQuantity">${search.item === undefined? 0: search.item}</div>
                  <i onclick="increment(${id})"  class="fa-solid fa-plus plus"></i>
