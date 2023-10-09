@@ -1,6 +1,6 @@
 let proContainer = document.getElementById("pro-container");
 let newShop = document.getElementById("new-arrival");
-let productButtons = document.getElementById("button")
+let productButtons = document.getElementById("button2")
 
 
 
@@ -31,6 +31,7 @@ let generateShop = () => {
                  </div>
                 </div>
                 <a onclick="increment(${id})" data-product-id="1" ><i class="fal fa-shopping-cart cart"></i></a>
+                
                 </div>
         `;
     }).join(""))
