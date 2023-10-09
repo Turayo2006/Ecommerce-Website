@@ -111,16 +111,15 @@ let products = [
 
 
 let generateCartItems = () => {
-       
     // Clear any previous content in the tbody
-    cartContainer.innerHTML = '';
+    cartContainer.innerHTML = '' || [];
 
     if (basket.length !== 0) {
         // Create a table to display cart items
    return (cartContainer.innerHTML = basket.map((x) => {
         let { id, item } = x;
         let search = products.find((y) => y.id === id) || [];
-        let { img, name, price } = search
+        let { img, name, price } = search;
         let subtotal = item * price;
         
         return `
@@ -140,7 +139,6 @@ let generateCartItems = () => {
             </tr>
         `;
     }).join(""));
-
     // Set the HTML content of the shopping cart element
 } else {
     // Handle the case where the cart is empty
@@ -152,6 +150,8 @@ let generateCartItems = () => {
         </a>
     `;
 }
+
+
 calculation();
 };
 
