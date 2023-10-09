@@ -11,6 +11,10 @@ html {
   font-family: "Spartan", san-serif;
 }
 
+a{
+  text-decoration: none;
+}
+
 h1{
   font-size: 50px;
   line-height: 64px;
