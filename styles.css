@@ -8,11 +8,12 @@ html {
   margin: 0;
   padding: 0; 
   box-sizing: border-box;
-  font-family: "Spartan", san-serif;
+  font-family: "Spartan", sans-serif;
 }
 
 a{
   text-decoration: none;
+  list-style: none;
 }
 
 h1{
@@ -57,8 +58,6 @@ body{
  width: 100%;
  font-family: inherit; 
 }
-
-
 
 #header{
   position: fixed;
@@ -136,6 +135,7 @@ display: none;
   left: 20px;
 }
 
+
 #hero{
   background-image: url("https://i.postimg.cc/cCwBHzDV/hero4.png");
   height: 90vh;
@@ -205,9 +205,7 @@ display: none;
 .select div span{
   display: none
 }
-/* #hero h2{
-  
-} */
+
 
 #hero h4{
   padding-bottom: 15px;
@@ -222,6 +220,206 @@ display: none;
   padding: 14px 80px 14px 65px;
 }
 
+
+.my-account{
+  position: relative;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color:#f8f9fa;
+  color: #fff;
+  width: 100%;
+  padding: 100px 0;
+  margin-bottom: 5rem;
+}
+
+.my-account .account{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 80px
+}
+
+
+.my-account .account h2{
+  font-size: 2.3em;
+  font-weight: 700;
+  color:#222
+}
+.my-account .account ul{
+  display: flex;
+  align-items: center;
+ 
+}
+
+.my-account .account ul li{
+    font-size: 1.1em;
+}
+
+
+/* login */
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+}
+
+form{
+  width: 50%;
+  padding: 28px;
+  border-radius: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(.8);
+  opacity: 0;
+  z-index: 100;
+  transition: all .3s ease;
+  transition-delay: 0s;
+
+}
+
+
+form.active{
+  transform: translateY(-50%);
+  opacity: 1;
+  z-index: 200;
+  transition-delay: .3s;
+
+}
+
+
+.title{
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  
+}
+
+.form-group{
+  margin-bottom: 14px;
+  
+}
+
+.form-group label{
+  display: inline-block;
+  margin-bottom: 4px;
+  
+}
+
+.input-group{
+  width: 100%;
+  position: relative;
+}
+
+.input-group input{
+  outline: none;
+  padding: 12px 40px 12px 20px;
+  border: none;
+  border-radius: 6px;
+  border: 1px solid #b7b7b7;
+  width: 100%;
+  transition: all .3s ease;
+  
+
+}
+
+.input-group i{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  color: #9b989b;
+  pointer-events: none;
+  transition: all .3s ease;
+
+}
+
+.form-group .help-text{
+  font-size: 12px;
+  color: #9b989b;
+}
+
+.btn-submit {
+  width: 20%;
+  height: 40px;
+  color: #fff;
+  padding: 12px 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: block;
+  outline: none;
+  border-radius: 6px;
+  border: none;
+  background-color: #088178;
+  box-shadow: 0 3px 1px -2px #ccc, 0 2px 2px 0 #ccc, 0 1px 5px 0 #ccc;
+}
+
+.btn-submit:hover{
+  background: #fff;
+  border: 2px solid #088178;
+  color: #088178;
+  
+}
+.btn-submit:active {
+  box-shadow: 0 4px 2px -3px #ccc, 0 4px 5px 1px #ccc, 0 2px 7px 1px #ccc;
+}
+
+/* validation */
+.input-group input:focus,
+.input-group input:not(:placeholder-shown){
+  border-color: #088178;
+  background: #ccc;
+}
+
+.input-group input:focus + i,
+.input-group input:not(:placeholder-shown) + i{
+  color: #041e42;
+  
+}
+
+.input-group input:focus:valid{
+  box-shadow: 0 0 0 4px #088178;
+}
+
+.input-group input:valid:not(:placeholder-shown) {
+  border-color: #088142;
+}
+
+.input-group input:valid:not(:placeholder-shown) + i {
+  color: #088142;
+}
+
+
+.input-group input:invalid:not(:placeholder-shown) {
+  border-color: #ef3636;
+}
+
+.input-group input:invalid:not(:placeholder-shown) + i {
+  color: #ef3636;
+}
+
+.input-group input:focus:invalid{
+  box-shadow: 0 0 0 4px #ec544e;
+}
+
+
+.input-group input:focus,
+.input-group input:focus:placeholder-shown{
+  box-shadow: 0 0 0 4px #ccc
+}
+
+
+/* login end */
+
+/* feature */
 #feature .fe-box{
   width: 180px;
   text-align: center;
@@ -616,9 +814,10 @@ button.white{
   align-items: center;
   flex-wrap: wrap;
   background-image: url(https://i.postimg.cc/R0Bs4qqt/b14.png);
-    background-repeat: no-repeat;
-    background-position: 20% 30%;
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
   background-color: #041e42;
+
 }
 
 #newsletter h4{
