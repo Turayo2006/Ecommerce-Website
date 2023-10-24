@@ -1452,7 +1452,7 @@ footer .copyright{
   background-color: #E3E6F3;
   box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
   padding: 80px 0 0 10px;
-    transition: 0.3s
+  transition: 0.3s;
     }
   
   #navbar.active{
@@ -1472,22 +1472,22 @@ display: flex;
     color: #1a1a1a;
     padding-left: 20px
   }
-  body #lg-bag{
+  /* body #lg-bag{
     display: none
-  }
+  } */
   
   #close{
   display: initial;
   position: absolute;
-  top: -280px;
+  top: -360px;
   left: 20px;
   color: #222;
-  font-size: 32px;  
+  font-size: 35px;  
 }
   
-  #lg-bag{
+  /* #lg-bag{
     display: none
-  }
+  } */
   
   .quantity{
     top: 15px;
