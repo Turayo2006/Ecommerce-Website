@@ -4,6 +4,20 @@ let oldShop = document.getElementById("old-arrival");
 
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
+let calculation = () => {
+  let cartIcon = document.getElementById("cartAmount");
+  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x,y)=> x + y, 0)
+  // console.log();
+}
+
+let calculation2 = () => {
+  let cartIcon = document.getElementById("cartAmount2");
+  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x,y)=> x + y, 0);
+}
+
+calculation();
+calculation2();
+
 let generateShop = () => {
     return (proContainer.innerHTML = products.map((x) =>{
         let {id, name, price, img} = x;
@@ -78,13 +92,7 @@ let increment = (id) => {
     let search = basket.find((x) => x.id === id);
     // console.log(search.item);
     document.getElementById(id).innerHTML = search.item;
-    calculation()
+    calculation();
+    calculation2();
   };
   
-  let calculation = () => {
-    let cartIcon = document.getElementById("cartAmount");
-    cartIcon.innerHTML = basket.map((x) => x.item).reduce((x,y)=> x + y, 0)
-    // console.log();
-  }
-  
-  calculation();
