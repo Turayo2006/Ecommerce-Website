@@ -5,6 +5,7 @@ let cartTable = document.getElementById("cart-table");
 let cartContainer = document.getElementById("cart-container");
 
 
+
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 let calculation = () => {
@@ -12,7 +13,13 @@ let calculation = () => {
     cartIcon.innerHTML = basket.map((x) => x.item).reduce((x,y)=> x + y, 0);
 }
 
+let calculation2 = () => {
+    let cartIcon = document.getElementById("cartAmount2");
+    cartIcon.innerHTML = basket.map((x) => x.item).reduce((x,y)=> x + y, 0);
+}
+
 calculation();
+calculation2();
 
 let products = [
     {
@@ -153,6 +160,7 @@ let generateCartItems = () => {
 
 
 calculation();
+calculation2();
 };
 
 generateCartItems();
@@ -231,6 +239,7 @@ let update = (id) => {
     // console.log(search.item);
     document.getElementById(id).innerHTML = search.item;
     calculation();
+    calculation2();
     TotalAmount();
 };
 
@@ -241,6 +250,7 @@ basket = basket.filter((x) => x.id !== selectedItem.id);
 generateCartItems();
 totalAmount();
 calculation();
+calculation2();
 localStorage.setItem("data", JSON.stringify(basket));
 };
 
@@ -248,6 +258,7 @@ let clearCart = () =>{
     basket = [];
     generateCartItems();
     calculation();
+    calculation2();
     localStorage.setItem("data", JSON.stringify(basket));
 }
 
