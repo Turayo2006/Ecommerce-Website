@@ -1,0 +1,46 @@
+// Get references to the elements in your checkout.html
+let orderSummary = document.getElementById('order-summary');
+let totalAmt = document.getElementById('total-amt');
+let order = document.getElementById('order');
+
+
+// Function to generate and display cart items in the order summary
+let generateOrderSummary = () => {
+    // Clear any previous content in the order summary
+    orderSummary.innerHTML = '';
+  
+    if (basket.length !== 0) {
+      // Create a container for the order summary
+      return (orderSummary.innerHTML = basket.map((x) => {
+        let { id, item } = x;
+        let search = products.find((y) => y.id === id) || [];
+        let { img, name, price } = search;
+
+        return `
+        <div class="cart-item">
+        <img width="120" src="${img}" alt=""/>
+        <div class="details">
+        <div class="title-price-x">
+        <h4 class="title-price">
+        <p>${name}</p>
+        <p class="cart-item-price">$${price}</p>
+        </h4>
+        </div>
+        <div id=${id} class="productQuantity">${item}</div>
+        <h3>${item * search.price}</h3>
+        </div>
+        </div>
+        `;
+
+}).join(""));
+    }  else {
+      // Handle the case where the cart is empty
+      order.innerHTML = '';
+  }
+
+  }
+  // Call the function to generate and display the order summary
+  generateOrderSummary();
+
+
+ 
