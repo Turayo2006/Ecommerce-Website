@@ -190,7 +190,9 @@ let TotalAmount = ()=>{
         <td><strong>Total</strong></td>
         <td><strong>$ ${amount}</strong></td>
       </tr>
-      <button class="btn normal" style="margin-top: 20px" href="#checkout.html">Proceed to checkout</button>
+      <a href="checkout.html">
+      <button class="btn normal" style="margin-top: 20px">Proceed to checkout</button>
+      </a>
         `;
     } else return;
 }
