@@ -27,7 +27,7 @@ let generateOrderSummary = () => {
         </h4>
         </div>
         <div id=${id} class="productQuantity">${item}</div>
-        <h3>${item * search.price}</h3>
+        <h3>$ ${item * search.price}</h3>
         </div>
         </div>
         `;
