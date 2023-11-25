@@ -1,6 +1,6 @@
 // Get references to the elements in your checkout.html
 let orderSummary = document.getElementById('order-summary');
-let totalAmt = document.getElementById('total-amt');
+let totalAmount = document.getElementById('total-amount');
 let order = document.getElementById('order');
 
 
@@ -55,11 +55,8 @@ let TotalAmount = ()=>{
         .reduce((x,y) => x+y, 0);
         // console.log(amount)
         totalAmount.innerHTML = `
-
- <tr>
-        <td><strong>Total</strong></td>
-        <td><strong>$ ${amount}</strong></td>
-      </tr>`
+       <strong>Total</strong>
+       <strong>$${amount}</strong>`
 
         TotalAmount();
 
