@@ -1144,6 +1144,11 @@ border: 1px solid #e2e9e1;
   gap: 15px
 }
 
+.title-price p{
+  font-size: 12px;
+  font-weight: 300
+}
+
 .cart-item-price{
   background-color: #212529;
   color: #fff;
