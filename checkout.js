@@ -45,20 +45,7 @@ let generateOrderSummary = () => {
   generateOrderSummary();
 
 
-let TotalAmount = ()=>{
-    if (basket.length !== 0){
-        let amount = basket.map((x) =>{
-            let {item, id} = x;
-            let search = products.find((y) => y.id === id);  
-            return item * search.price;
-        })
-        .reduce((x,y) => x+y, 0);
-        // console.log(amount)
-        totalAmount.innerHTML = `
-       <strong>Total Summary</strong>
-       <strong>$${amount}</strong>`
 
-        TotalAmount();
 
 
 
