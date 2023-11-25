@@ -45,4 +45,11 @@ let generateOrderSummary = () => {
   generateOrderSummary();
 
 
+
+ <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>$ ${amount}</strong></td>
+      </tr>
+
+
  
