@@ -2,7 +2,7 @@
 let orderSummary = document.getElementById('order-summary');
 let totalAmt = document.getElementById('total-amt');
 let order = document.getElementById('order');
-let totalAmount = document.getElementById('total-amount');
+// let totalAmount = document.getElementById('total-amount');
 
 // Function to generate and display cart items in the order summary
 let generateOrderSummary = () => {
@@ -44,6 +44,21 @@ let generateOrderSummary = () => {
   // Call the function to generate and display the order summary
   generateOrderSummary();
 
+
+
+// let TotalAmount = ()=>{
+//     if (basket.length !== 0){
+//         let amount = basket.map((x) =>{
+//             let {item, id} = x;
+//             let search = products.find((y) => y.id === id);  
+//             return item * search.price;
+//         })
+//         .reduce((x,y) => x+y, 0);
+//         totalAmount.innerHTML = `
+//        <strong>Total Summary</strong>
+//        <strong>$${amount}</strong>`
+
+//         TotalAmount();
 
 
 
