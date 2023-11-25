@@ -59,7 +59,7 @@ let TotalAmount = ()=>{
         totalAmount.innerHTML = `
        <strong>Total Summary</strong>
        <strong>$${amount}</strong>`
-    } else return
+    } else return;
 }
         TotalAmount();
         generateOrderSummary();
