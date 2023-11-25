@@ -4,6 +4,8 @@ let totalAmt = document.getElementById('total-amt');
 let order = document.getElementById('order');
 let totalAmount = document.getElementById('total-amount');
 
+let basket = JSON.parse(localStorage.getItem("data")) || [];
+
 // Function to generate and display cart items in the order summary
 let generateOrderSummary = () => {
     // Clear any previous content in the order summary
@@ -57,7 +59,8 @@ let TotalAmount = ()=>{
         totalAmount.innerHTML = `
        <strong>Total Summary</strong>
        <strong>$${amount}</strong>`
-
+    }
+}
         TotalAmount();
         generateOrderSummary();
 
