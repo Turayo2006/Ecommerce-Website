@@ -1128,6 +1128,7 @@ border: 1px solid #e2e9e1;
 .cart-item img{
   margin-top: 20px;
   margin-right: 10px;
+  margin-left: 20px;
 }
 .title-price-x{
   display: flex;
