@@ -2,7 +2,7 @@
 let orderSummary = document.getElementById('order-summary');
 let totalAmt = document.getElementById('total-amt');
 let order = document.getElementById('order');
-let totalAmount = document.getElementById('total-amount');
+// let totalAmount = document.getElementById('total-amount');
 
 // let basket = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -48,21 +48,21 @@ let generateOrderSummary = () => {
 
 
 
-let TotalAmount = ()=>{
-    if (basket.length !== 0){
-        let amount = basket.map((z) =>{
-            let {item, id} = z;
-            let search = products.find((x) => x.id === id);  
-            return item * search.price;
-        })
-        .reduce((z,y) => z+y, 0);
-        totalAmount.innerHTML = `
-       <strong>Total Summary</strong>
-       <strong>$${amount}</strong>`
-    } else return;
-}
-        TotalAmount();
-        generateOrderSummary();
+// let TotalAmount = ()=>{
+//     if (basket.length !== 0){
+//         let amount = basket.map((z) =>{
+//             let {item, id} = z;
+//             let search = products.find((x) => x.id === id);  
+//             return item * search.price;
+//         })
+//         .reduce((z,y) => z+y, 0);
+//         totalAmount.innerHTML = `
+//        <strong>Total Summary</strong>
+//        <strong>$${amount}</strong>`
+//     } else return;
+// }
+//         TotalAmount();
+//         generateOrderSummary();
 
 
 
