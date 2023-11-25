@@ -18,7 +18,7 @@ let generateOrderSummary = () => {
 
         return `
         <div class="cart-item">
-        <img width="120" src="${img}" alt=""/>
+        <img width="50" src="${img}" alt=""/>
         <div class="details">
         <div class="title-price-x">
         <h4 class="title-price">
