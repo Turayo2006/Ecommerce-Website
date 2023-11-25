@@ -55,7 +55,7 @@ let TotalAmount = ()=>{
         .reduce((x,y) => x+y, 0);
         // console.log(amount)
         totalAmount.innerHTML = `
-       <strong>Total</strong>
+       <strong>Total Summary</strong>
        <strong>$${amount}</strong>`
 
         TotalAmount();
