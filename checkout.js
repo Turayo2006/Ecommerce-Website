@@ -2,7 +2,7 @@
 let orderSummary = document.getElementById('order-summary');
 let totalAmt = document.getElementById('total-amt');
 let order = document.getElementById('order');
-// let totalAmount = document.getElementById('total-amount');
+let totalAmount = document.getElementById('total-amount');
 
 // Function to generate and display cart items in the order summary
 let generateOrderSummary = () => {
