@@ -90,21 +90,32 @@
             <div class="form-group">
                 <label for="state">State</label>
                 <div class="input-group2">
-                <input type="text" id="state" placeholder="state">
+                  <select type="text" id="state" placeholder="state" name="state">
+                    <option selected>Select State</option>
+                  </select>
+                <!-- <input > -->
             </div>
             </div>
 
             <div class="form-group">
                 <label for="lga">LGA</label>
                 <div class="input-group2">
-                <input type="text" id="Lga" placeholder="Local government area">
+                  <select type="text" id="Lga" placeholder="Local government area" name="Lga">
+                    <option selected>Select Local government area</option>
+                  </select>
+
+                <!-- <input type="text" id="Lga" placeholder="Local government area"> -->
             </div>
             </div>
 
             <div class="form-group">
                 <label for="country">Country</label>
                 <div class="input-group2">
-                <input type="text" id="country" placeholder="country">
+                  <select type="text" id="country" placeholder="country" name="country">
+                    <option selected>Select Country</option>
+                  </select>
+
+                <!-- <input type="text" id="country" placeholder="country"> -->
             </div>
             </div>
 
@@ -115,13 +126,11 @@
               <div id="order" class="order">
                 <h3>Order Summary</h3>
                 <div id="order-summary"></div>
+                
 
-                  
-<!--                   <div class="total-summary" id="total-amount">Total Amount</div> -->
                 <button type="submit" class="btn-submit" style="margin-top: 50px">Pay Now</button>
-                  
-              </div>
 
+              </div>
         </div>
 
         <div id="payment-method">
