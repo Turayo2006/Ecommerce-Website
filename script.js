@@ -60,6 +60,14 @@ registerPassword.addEventListener('input', function(){
 })
 
 
+// country state and local government configuration
+
+var config = {
+  cUrl: 'https://api.countrystatecity.in/v1/countries',
+  ckey:   ''
+}
 
 
-
+var countrySelect = document.querySelector('.country');
+var stateSelect = document.querySelector('.state');
+var lgaSelect = document.querySelector('.lga');
