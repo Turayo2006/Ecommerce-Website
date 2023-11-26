@@ -348,6 +348,19 @@ form a{
 
 }
 
+.input-group2 select{
+  outline: none;
+  padding: 12px 40px 12px 20px;
+  border: none;
+  border-radius: 3px;
+  border: 1px solid #b7b7b7;
+  width: 600px;
+  transition: all .3s ease;
+  
+
+}
+
+
 .input-group i{
   position: absolute;
   top: 50%;
