@@ -64,10 +64,12 @@ registerPassword.addEventListener('input', function(){
 
 var config = {
   cUrl: 'https://api.countrystatecity.in/v1/countries',
-  ckey:   ''
+  ckey:   'OVQzTEc4NEpob29uSEpwNHdhNHVBTTQwV0dOaHVCOWtSbDBvelRQUQ=='
 }
 
 
 var countrySelect = document.querySelector('.country');
 var stateSelect = document.querySelector('.state');
 var lgaSelect = document.querySelector('.lga');
+
+
