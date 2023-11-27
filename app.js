@@ -131,3 +131,38 @@ let calculation2 = () => {
 
 calculation();
 calculation2();
+
+
+
+
+
+// country state and local government configuration
+
+var config = {
+  cUrl: 'https://api.countrystatecity.in/v1/countries',
+  ckey:   'OVQzTEc4NEpob29uSEpwNHdhNHVBTTQwV0dOaHVCOWtSbDBvelRQUQ=='
+}
+
+
+var countrySelect = document.querySelector('.country'),
+var stateSelect = document.querySelector('.state'),
+var lgaSelect = document.querySelector('.lga')
+
+function loadCountries() {
+  let apiEndPoint = config.cUrl
+
+  fetch(apiEndPoint, {headers: {"X-CSCAPI-KEY": config.ckey}})
+    .then(Response => Response.json())
+    .then(data => {
+    // console.log(data);
+
+      data.forEach(country => {
+        const option = document.createElement('option')
+        option.value = country.iso2
+        option.textContent = country.name
+        countrySelect.appendChild(option)
+      })
+  })
+}
+
+window.onload = loadCountries
