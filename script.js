@@ -75,7 +75,11 @@ var lgaSelect = document.querySelector('.lga');
 function loadCountries() {
   let apiEndPoint = config.cUrl
 
-  fetch(apiEndPoint, {headers: {"X-CSCAPI-KEY": config.ckey}}).then(Response => Response.json()).then(data => {
-    
+  fetch(apiEndPoint, {headers: {"X-CSCAPI-KEY": config.ckey}})
+    .then(Response => Response.json())
+    .then(data => {
+    console.log(data);
   })
 }
+
+window.onload = loadCountries
