@@ -145,8 +145,8 @@ var config = {
 
 
 var countrySelect = document.querySelector('.country'),
-var countryState = document.querySelector('.state'),
-var countryLga = document.querySelector('.lga')
+countryState = document.querySelector('.state'),
+countryLga = document.querySelector('.lga')
 
 function loadCountries() {
   let apiEndPoint = config.cUrl
