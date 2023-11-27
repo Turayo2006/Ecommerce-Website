@@ -78,7 +78,14 @@ function loadCountries() {
   fetch(apiEndPoint, {headers: {"X-CSCAPI-KEY": config.ckey}})
     .then(Response => Response.json())
     .then(data => {
-    console.log(data);
+    // console.log(data);
+
+      data.forEach(country => {
+        const option = document.createElement('option')
+        option.value = country.iso2
+        option.textContent = country.name
+        countrySelect.appendChild(option)
+      })
   })
 }
 
