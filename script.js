@@ -68,9 +68,9 @@ var config = {
 }
 
 
-var countrySelect = document.querySelector('.country');
-var stateSelect = document.querySelector('.state');
-var lgaSelect = document.querySelector('.lga');
+var countrySelect = document.querySelector('.country'),
+var stateSelect = document.querySelector('.state'),
+var lgaSelect = document.querySelector('.lga')
 
 function loadCountries() {
   let apiEndPoint = config.cUrl
