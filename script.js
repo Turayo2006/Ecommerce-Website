@@ -72,4 +72,10 @@ var countrySelect = document.querySelector('.country');
 var stateSelect = document.querySelector('.state');
 var lgaSelect = document.querySelector('.lga');
 
+function loadCountries() {
+  let apiEndPoint = config.cUrl
 
+  fetch(apiEndPoint, {headers: {"X-CSCAPI-KEY": config.ckey}}).then(Response => Response.json()).then(data => {
+    
+  })
+}
